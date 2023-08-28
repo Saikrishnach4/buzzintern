@@ -4,8 +4,10 @@ const cors = require('cors');
 const authRoutes = require('./routes/auth');
 const influencerRoutes = require('./routes/influencer');
 const db = require('./db');
+const User = require('./models/User');
 const jwt = require("jsonwebtoken")
 const app = express();
+
 const port = process.env.PORT || 5000;
 
 app.use(cors());
