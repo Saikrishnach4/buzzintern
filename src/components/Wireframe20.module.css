@@ -1,0 +1,206 @@
+.myAccount {
+  position: absolute;
+  top: 92px;
+  left: calc(50% - 312px);
+  text-align: center;
+  text-shadow: 4px 4px 0#c76bff;
+}
+.vectorIcon {
+  position: absolute;
+  height: 69.27%;
+  width: 7.75%;
+  top: 15.97%;
+  right: 92.25%;
+  bottom: 14.76%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.hasbullaRahim {
+  position: absolute;
+  top: 0;
+  left: 84.28px;
+}
+.vectorParent {
+  height: 20.63%;
+  width: 91.46%;
+  top: 4.4%;
+  right: 8.54%;
+  bottom: 74.97%;
+  left: 0;
+}
+.b,
+.hbulla,
+.vectorParent {
+  position: absolute;
+}
+.b {
+  top: 0.89px;
+  left: calc(50% - 115.27px);
+  display: inline-block;
+  width: 31.55px;
+  height: 59.77px;
+}
+.hbulla {
+  top: 0;
+  left: 81.55px;
+  font-size: 41.67px;
+  text-transform: lowercase;
+  color: var(--color-white);
+  text-align: left;
+}
+.bParent {
+  position: absolute;
+  top: 105.46px;
+  left: calc(50% - 250px);
+  width: 230.55px;
+  height: 60.66px;
+  text-align: center;
+  font-size: 41.4px;
+  color: var(--color-mediumorchid);
+}
+.mdipassword,
+.vectorIcon1 {
+  position: absolute;
+  top: 115.26px;
+  left: 212.32px;
+  width: 40.39px;
+  height: 40.39px;
+  overflow: hidden;
+}
+.vectorIcon1 {
+  height: 48.46%;
+  width: 6.34%;
+  top: 26.74%;
+  right: 93.66%;
+  bottom: 24.79%;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+.span {
+  font-family: var(--font-black-han-sans);
+}
+.husbullagmailcom {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 197.44px);
+  text-transform: lowercase;
+}
+.vectorGroup {
+  position: absolute;
+  height: 20.63%;
+  width: 114.63%;
+  top: 68.08%;
+  right: -14.63%;
+  bottom: 11.3%;
+  left: 0;
+}
+.groupParent,
+.mdipassword1,
+.mdipasswordWrapper {
+  position: absolute;
+  left: 0;
+  width: 40.39px;
+  height: 40.39px;
+}
+.mdipassword1 {
+  top: 0;
+  overflow: hidden;
+}
+.groupParent,
+.mdipasswordWrapper {
+  top: 290.56px;
+}
+.groupParent {
+  top: 422px;
+  left: 960px;
+  width: 500px;
+  height: 290.87px;
+  font-size: 41.67px;
+}
+.editInYour {
+  position: absolute;
+  top: 812px;
+  left: calc(50% - 481px);
+  font-size: 19px;
+  color: var(--color-mediumorchid);
+}
+.vectorIcon2,
+.vectorIcon3 {
+  position: absolute;
+  height: 1.76%;
+  width: 0.89%;
+  top: 84.16%;
+  right: 59.5%;
+  bottom: 14.09%;
+  left: 39.62%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vectorIcon3 {
+  height: 53.33%;
+  width: 78.33%;
+  top: 23.33%;
+  right: 10.83%;
+  bottom: 23.33%;
+  left: 10.83%;
+}
+.iconamoonmenuBurgerHorizont {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 56px;
+  left: 84px;
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+}
+.wireframe20Child {
+  position: absolute;
+  top: 374px;
+  left: 427px;
+  width: 392px;
+  height: 389px;
+}
+.frameChild {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 145.98px);
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  width: 290.62px;
+  height: 290.62px;
+}
+.ellipseParent,
+.unsplashcwnxlkekbeaIcon {
+  position: absolute;
+  width: 334.82px;
+  height: 334.82px;
+}
+.unsplashcwnxlkekbeaIcon {
+  top: calc(50% - 167.41px);
+  left: calc(50% - 167.41px);
+  object-fit: cover;
+}
+.ellipseParent {
+  top: 400.14px;
+  left: calc(50% - 498.71px);
+  border-radius: 290.62px;
+  overflow: hidden;
+}
+.wireframe20 {
+  position: relative;
+  background-color: var(--color-gray-100);
+  width: 100%;
+  height: 970px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 96px;
+  color: var(--color-white);
+  font-family: var(--font-roboto);
+}

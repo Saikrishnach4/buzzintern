@@ -1,0 +1,608 @@
+.signUpFor {
+  position: absolute;
+  top: 95px;
+  left: calc(50% - 601px);
+  font-size: 74.81px;
+  font-family: var(--font-roboto);
+  color: var(--color-white);
+  text-align: center;
+  display: inline-block;
+  width: 1201px;
+  text-shadow: 4px 4px 0#c76bff;
+}
+.wireframe19Child {
+  position: absolute;
+  top: 462px;
+  left: 684px;
+  border-radius: var(--br-xs-2);
+  background-color: var(--color-white);
+  width: 552px;
+  height: 59.98px;
+}
+.name {
+  position: absolute;
+  top: 474px;
+  left: 783px;
+}
+.wireframe19Inner,
+.wireframe19Item {
+  border: 0;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 638px;
+  left: 684px;
+  border-radius: var(--br-xs-2);
+  width: 552px;
+  height: 59.98px;
+}
+.wireframe19Inner {
+  top: 550px;
+}
+.buzzName {
+  position: absolute;
+  top: 563px;
+  left: 783px;
+}
+.rectangleInput,
+.wireframe19Child1 {
+  border: 0;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 726px;
+  left: 684px;
+  border-radius: var(--br-xs-2);
+  width: 552px;
+  height: 59.98px;
+}
+.wireframe19Child1 {
+  top: 813.98px;
+  left: 685px;
+}
+.confirmPassword,
+.email {
+  position: relative;
+  top: 650px;
+ 
+  color: var(--color-lightgray);
+}
+.confirmPassword {
+  top: 824px;
+}
+.mdipasswordIcon,
+.mdipasswordIcon1 {
+  position: absolute;
+  top: 656px;
+  left: 722px;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+}
+.mdipasswordIcon1 {
+  top: 744px;
+}
+.password {
+  position: absolute;
+  top: 738px;
+  left: 783px;
+}
+.lineMdconfirmIcon {
+  position: absolute;
+  top: 830.5px;
+  left: 721.5px;
+  width: 27px;
+  height: 27px;
+}
+.b,
+.vectorIcon {
+  position: absolute;
+}
+.vectorIcon {
+  height: 2.38%;
+  width: 1.14%;
+  top: 44.44%;
+  right: 61.04%;
+  bottom: 53.17%;
+  left: 37.81%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.b {
+  top: 563px;
+  left: calc(50% - 232px);
+  font-size: 25.63px;
+  color: var(--color-lightgray);
+  text-align: center;
+  display: inline-block;
+  width: 19.53px;
+  height: 37px;
+}
+.circle,
+.circle1,
+.circle2,
+.circle3 {
+  position: absolute;
+  top: 760.68px;
+  left: 1689.38px;
+  border-radius: 50%;
+  box-shadow: 11.65836238861084px -28.150678634643555px 26.44px 0.85px #c76bff inset,
+    24.454124450683594px 3.6965537071228027px 58.01px -3.98px #c2e8d5 inset,
+    63.41011428833008px -18.767120361328125px 58.58px -9.1px #ffc3f9 inset;
+  border: 90.6px solid var(--color-gray-500);
+  box-sizing: border-box;
+  width: 729.87px;
+  height: 343.15px;
+  transform: rotate(43.78deg);
+  transform-origin: 0 0;
+}
+.circle1,
+.circle2,
+.circle3 {
+  top: 501.68px;
+  left: 1703.38px;
+}
+.circle2,
+.circle3 {
+  top: -249.32px;
+  left: -182.62px;
+}
+.circle3 {
+  top: -456.32px;
+  left: -161.62px;
+}
+.groupIcon,
+.groupIcon1,
+.vectorIcon1 {
+  position: absolute;
+  height: 17.28%;
+  width: 6.59%;
+  top: 69.35%;
+  right: 93.41%;
+  bottom: 13.37%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.groupIcon1,
+.vectorIcon1 {
+  height: 15.75%;
+  width: 7.67%;
+  top: 4.51%;
+  right: -18%;
+  bottom: 79.74%;
+  left: 110.33%;
+}
+.vectorIcon1 {
+  height: 4.72%;
+  width: 2.03%;
+  top: 82.7%;
+  right: 100.89%;
+  bottom: 12.58%;
+  left: -2.92%;
+}
+.vectorIcon2,
+.vectorIcon3,
+.vectorIcon4,
+.vectorIcon5,
+.vectorIcon6,
+.vectorIcon7,
+.vectorIcon8 {
+  position: absolute;
+  height: 4.72%;
+  width: 2.03%;
+  top: -14.4%;
+  right: -10.25%;
+  bottom: 109.68%;
+  left: 108.22%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vectorIcon3,
+.vectorIcon4,
+.vectorIcon5,
+.vectorIcon6,
+.vectorIcon7,
+.vectorIcon8 {
+  top: 107.14%;
+  right: 94.58%;
+  bottom: -11.86%;
+  left: 3.39%;
+}
+.vectorIcon4,
+.vectorIcon5,
+.vectorIcon6,
+.vectorIcon7,
+.vectorIcon8 {
+  top: -11.08%;
+  right: 4.76%;
+  bottom: 106.35%;
+  left: 93.21%;
+}
+.vectorIcon5,
+.vectorIcon6,
+.vectorIcon7,
+.vectorIcon8 {
+  height: 3.93%;
+  width: 2.79%;
+  top: 63.53%;
+  right: 72.82%;
+  bottom: 32.54%;
+  left: 24.39%;
+}
+.vectorIcon6,
+.vectorIcon7,
+.vectorIcon8 {
+  height: 4.72%;
+  width: 2.03%;
+  top: 36.45%;
+  right: -10.69%;
+  bottom: 58.83%;
+  left: 108.66%;
+}
+.vectorIcon7,
+.vectorIcon8 {
+  height: 3.54%;
+  width: 3.24%;
+  top: 96.46%;
+  right: 74.1%;
+  bottom: 0;
+  left: 22.66%;
+}
+.vectorIcon8 {
+  height: 4.55%;
+  width: 4.02%;
+  top: 24.18%;
+  right: 6.9%;
+  bottom: 71.27%;
+  left: 89.08%;
+}
+.vectorIcon10,
+.vectorIcon9,
+.wireframe19Child2,
+.wireframe19Child3 {
+  position: absolute;
+  height: 20.65%;
+  width: 20.63%;
+  top: 64.86%;
+  right: 70.7%;
+  bottom: 14.49%;
+  left: 8.67%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vectorIcon10,
+.wireframe19Child2,
+.wireframe19Child3 {
+  height: 34.01%;
+  width: 2.96%;
+  top: 8.54%;
+  right: 0;
+  bottom: 57.44%;
+  left: 97.04%;
+}
+.wireframe19Child2,
+.wireframe19Child3 {
+  height: 9.63%;
+  width: 6.25%;
+  top: 90.37%;
+  right: 93.75%;
+  bottom: 0;
+  left: 0;
+}
+.wireframe19Child3 {
+  height: 9.12%;
+  width: 5.92%;
+  top: -3.1%;
+  right: -3.8%;
+  bottom: 93.98%;
+  left: 97.88%;
+}
+.wireframe19Child4,
+.wireframe19Child5,
+.wireframe19Child6,
+.wireframe19Child7 {
+  position: absolute;
+  height: 23.24%;
+  width: 15.09%;
+  top: 76.76%;
+  right: 79.16%;
+  bottom: 0;
+  left: 5.75%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.wireframe19Child5,
+.wireframe19Child6,
+.wireframe19Child7 {
+  height: 22.23%;
+  width: 7.73%;
+  top: 0;
+  right: 0;
+  bottom: 77.77%;
+  left: 92.27%;
+}
+.wireframe19Child6,
+.wireframe19Child7 {
+  height: 20.1%;
+  width: 10.06%;
+  top: 40.56%;
+  right: 81.45%;
+  bottom: 39.34%;
+  left: 8.49%;
+}
+.wireframe19Child7 {
+  height: 16.79%;
+  width: 7.29%;
+  top: 33.96%;
+  right: -31.23%;
+  bottom: 49.25%;
+  left: 123.94%;
+}
+.groupIcon2,
+.vectorIcon11,
+.vectorIcon12,
+.vectorIcon13,
+.vectorIcon14 {
+  position: absolute;
+  height: 4.81%;
+  width: 9.74%;
+  top: 107.41%;
+  right: 101.61%;
+  bottom: -12.22%;
+  left: -11.35%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.groupIcon2,
+.vectorIcon12,
+.vectorIcon13,
+.vectorIcon14 {
+  top: -36.14%;
+  right: -7.25%;
+  bottom: 131.33%;
+  left: 97.51%;
+}
+.groupIcon2,
+.vectorIcon13,
+.vectorIcon14 {
+  height: 15.18%;
+  width: 7.71%;
+  top: 102.87%;
+  right: 82.81%;
+  bottom: -18.05%;
+  left: 9.48%;
+}
+.groupIcon2,
+.vectorIcon14 {
+  height: 10.58%;
+  width: 9.43%;
+  top: 0;
+  right: 6.86%;
+  bottom: 89.42%;
+  left: 83.7%;
+}
+.groupIcon2 {
+  height: 7.5%;
+  width: 4.11%;
+  top: 62.59%;
+  right: 92.71%;
+  bottom: 29.9%;
+  left: 3.18%;
+}
+.groupIcon3,
+.vectorIcon15,
+.vectorIcon16,
+.vectorIcon17,
+.vectorIcon18 {
+  position: absolute;
+  height: 5.93%;
+  width: 3.37%;
+  top: 3.46%;
+  right: -20.27%;
+  bottom: 90.61%;
+  left: 116.91%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vectorIcon15,
+.vectorIcon16,
+.vectorIcon17,
+.vectorIcon18 {
+  height: 0.53%;
+  width: 2.27%;
+  top: 62.81%;
+  right: 82.7%;
+  bottom: 36.66%;
+  left: 15.03%;
+}
+.vectorIcon16,
+.vectorIcon17,
+.vectorIcon18 {
+  height: 1.53%;
+  width: 1.82%;
+  top: 23.22%;
+  right: -15.76%;
+  bottom: 75.25%;
+  left: 113.94%;
+}
+.vectorIcon17,
+.vectorIcon18 {
+  height: 6.08%;
+  width: 3.36%;
+  top: 85.1%;
+  right: 76.71%;
+  bottom: 8.82%;
+  left: 19.93%;
+}
+.vectorIcon18 {
+  height: 5.92%;
+  width: 3.37%;
+  top: 22.38%;
+  right: 0.4%;
+  bottom: 71.7%;
+  left: 96.22%;
+}
+.vectorIcon19,
+.vectorIcon20,
+.wireframe19Child8,
+.wireframe19Child9 {
+  position: absolute;
+  height: 5.41%;
+  width: 4.57%;
+  top: 101.02%;
+  right: 77.71%;
+  bottom: -6.43%;
+  left: 17.72%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vectorIcon20,
+.wireframe19Child8,
+.wireframe19Child9 {
+  height: 9.15%;
+  width: 2.43%;
+  top: 11.64%;
+  right: 8.89%;
+  bottom: 79.22%;
+  left: 88.67%;
+}
+.wireframe19Child8,
+.wireframe19Child9 {
+  height: 13.71%;
+  width: 14.99%;
+  top: 108.98%;
+  right: 62.2%;
+  bottom: -22.69%;
+  left: 22.82%;
+}
+.wireframe19Child9 {
+  height: 28.1%;
+  width: 16.26%;
+  top: 16.85%;
+  right: 11.6%;
+  bottom: 55.04%;
+  left: 72.14%;
+}
+.findOutHow {
+  position: relative;
+  top: -228px;
+  left: 6px;
+  font-size: 29.4px;
+  color: var(--color-mediumorchid);
+  text-align: center;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.rectangleButton {
+  cursor: pointer;
+  border: 34px solid var(--color-mediumorchid);
+  padding: 0;
+  background-color: var(--color-white);
+  position: relative;
+  top: 650px;
+  left: 14px;
+  border-radius: var(--br-xs-2);
+  box-sizing: border-box;
+  width: 552px;
+  height: 59.98px;
+}
+.proceed {
+  cursor: pointer;
+  position: relative;
+  top: 580px;
+  left: 14px;
+  color: var(--color-white);
+}
+.wireframe19 {
+  position: relative;
+  background-color: var(--color-gray-100);
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-6xl-8);
+  color: var(--color-gray-400);
+  font-family: var(--font-roboto);
+}
+/* src/styles.css */
+.maindiv{
+  margin: 0;
+  padding: 0;
+  background: url('../../public/c129430e1cb18e8a88ecf5d9d137bbeb.jpeg') no-repeat center center fixed;
+  background-size: cover;
+
+  height: 100vh;
+  /* Ensure the body takes the full viewport height */
+  overflow: hidden;
+  /* Prevent vertical scrollbar due to body's height */
+}
+
+
+
+
+.h2 {
+  
+  width: 538px;
+  height: 107.854px;
+  flex-shrink: 0;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 2.272439479827881px 2.272439479827881px 0px #C76BFF;
+  font-family: Cocogoose Pro;
+  font-size: 74.806px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.innerdiv{
+  position: relative;
+  bottom: 240px;
+align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+input{
+  display: flex;
+ 
+  width: 552px;
+height: 59.979px;
+flex-shrink: 0;
+border-radius: 11.2px;
+border: 0px solid #C76BFF;
+background: #FFF;
+color: rgba(19, 19, 19, 0.22);
+font-family: Cocogoose Pro;
+font-size: 25.795px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+font-variant: small-caps;
+}
+.button{
+  width: 552px;
+height: 59.979px;
+background-color: #C76BFF;
+border-radius: 11.2px;
+position: relative;
+left: 10px;
+
+
+}
+.email{
+  display: flex;
+}
+.or{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
