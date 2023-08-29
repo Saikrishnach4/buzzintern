@@ -10,14 +10,15 @@ const influencerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  buzzname: {
-    type: String,
-    required: true,
-  },
   name: {
     type: String,
     required: true,
   },
+  buzzname: {
+    type: String,
+    required: true,
+  }
+
 });
 
 const Influencer = mongoose.model('Influencer', influencerSchema);

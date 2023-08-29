@@ -1,0 +1,144 @@
+.myCohorts {
+    position: absolute;
+    top: 92px;
+    left: calc(50% - 309px);
+    font-size: var(--font-size-77xl);
+    color: var(--color-white);
+    text-align: center;
+    text-shadow: 4px 4px 0#c76bff;
+  }
+  .iconamoonmenuBurgerHorizont {
+    position: absolute;
+    top: 56px;
+    left: 84px;
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+  }
+  .wireframe21Child,
+  .wireframe21Item {
+    position: absolute;
+    top: 320px;
+    left: calc(50% - 657px);
+    border-radius: var(--br-2xl);
+    background-color: var(--color-white);
+    width: 1314px;
+    height: 232px;
+  }
+  .wireframe21Item {
+    top: 717px;
+  }
+  .wireframe21Inner {
+    position: absolute;
+    height: 73.89%;
+    width: 11.69%;
+    top: 21.69%;
+    right: 72.8%;
+    bottom: 4.42%;
+    left: 15.51%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  .lisaPedrinho {
+    position: absolute;
+    top: 363px;
+    left: calc(50% - 398px);
+    text-align: center;
+  }
+  .lifestyle {
+    top: 452px;
+    font-size: var(--font-size-22xl);
+  }
+  .lifestyle,
+  .musicAndPerforming,
+  .zacMarino {
+    position: absolute;
+    left: calc(50% - 398px);
+  }
+  .zacMarino {
+    top: 760px;
+    text-align: center;
+  }
+  .musicAndPerforming {
+    top: 849px;
+    font-size: var(--font-size-22xl);
+  }
+  .vectorIcon,
+  .vectorIcon1,
+  .vectorIcon2,
+  .vectorIcon3 {
+    position: absolute;
+    height: 6.45%;
+    width: 2.88%;
+    top: 37.16%;
+    right: 19.08%;
+    bottom: 56.39%;
+    left: 78.04%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .vectorIcon1,
+  .vectorIcon2,
+  .vectorIcon3 {
+    top: 73.92%;
+    bottom: 19.63%;
+  }
+  .vectorIcon2,
+  .vectorIcon3 {
+    height: 6.67%;
+    width: 3.75%;
+    top: 37.04%;
+    right: 25.63%;
+    bottom: 56.3%;
+    left: 70.63%;
+  }
+  .vectorIcon3 {
+    top: 73.7%;
+    bottom: 19.63%;
+  }
+  .div,
+  .inProgress,
+  .rectangleIcon,
+  .wireframe21Child1 {
+    position: absolute;
+    top: 496.66px;
+    left: 1295px;
+    width: 193px;
+    height: 106.5px;
+  }
+  .div,
+  .inProgress,
+  .wireframe21Child1 {
+    top: 890.66px;
+  }
+  .div,
+  .inProgress {
+    top: 548px;
+    left: 1316px;
+    font-size: 23px;
+    line-height: 125.35%;
+    color: var(--color-white);
+    display: inline-block;
+    width: 152px;
+    height: 37px;
+  }
+  .div {
+    top: 939px;
+    font-size: 34px;
+    font-family: var(--font-black-han-sans);
+  }
+  .wireframe21 {
+    position: relative;
+    background-color: var(--color-gray-100);
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 61.91px;
+    color: var(--color-gray-100);
+    font-family: var(--font-roboto);
+  }
+  

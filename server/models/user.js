@@ -10,14 +10,23 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  buzzname: {
-    type: String,
-    required: true,
-  },
   name: {
     type: String,
     required: true,
   },
+  buzzname: {
+    type: String,
+    required: true,
+  },
+  cohorts: [
+    {
+      name: String,
+      category: String,
+      image: String,
+      // Other cohort details
+    }
+  ]
+  
 });
 
 const User = mongoose.model('User', userSchema);

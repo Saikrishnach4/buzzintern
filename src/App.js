@@ -12,6 +12,7 @@ import Wireframe19 from "./pages/Wireframe19";
 import { useEffect,useState } from "react";
 import Login from "./components/login";
 import User from "./components/user";
+import Wireframe21 from "./components/enrolled";
 
 function App() {
   const action = useNavigationType();
@@ -75,6 +76,7 @@ function App() {
     <Route path="/influencersignup" element={<Wireframe19 />} />
     <Route path="/buzzfluencerview" element={<BuzzfluencerView />} />
     <Route path="/usersignup" element={<User />} />
+    <Route path="/enrolled" element={<Wireframe21 />} />
     
   </Routes>
   );

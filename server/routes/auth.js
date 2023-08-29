@@ -9,8 +9,8 @@ const router = express.Router();
 // User registration
 router.post('/user/signup', async (req, res) => {
   try {
-    const { email, password } = req.body;
-    
+    const { email, password,name,buzzname } = req.body;
+
     // Check if the email already exists in the Influencer collection
     const existingInfluencer = await Influencer.findOne({ email });
     if (existingInfluencer) {
@@ -21,12 +21,15 @@ router.post('/user/signup', async (req, res) => {
     if (existingUser) {
       return res.status(400).json({ error: 'User with this email already exists' });
     }
-    
+
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({ email, password: hashedPassword });
+    const newUser = new User({ email, password: hashedPassword,name,buzzname });
     await newUser.save();
-    
-    res.status(201).json({ message: 'User registered successfully' });
+
+    // Generate a token with userType set to 'user'
+    const token = jwt.sign({ userId: newUser._id, userType: 'user' }, 'krishna', { expiresIn: '1h' });
+
+    res.status(201).json({ message: 'User registered successfully', token });
   } catch (error) {
     res.status(500).json({ error: 'Error registering user' });
   }
@@ -35,8 +38,8 @@ router.post('/user/signup', async (req, res) => {
 // Influencer registration
 router.post('/influencer/register', async (req, res) => {
   try {
-    const { email, password } = req.body;
-     console.log(email,password)
+    const { email, password,name,buzzname } = req.body;
+
     // Check if the email already exists in the User collection
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -47,16 +50,20 @@ router.post('/influencer/register', async (req, res) => {
     if (existingInfluencer) {
       return res.status(400).json({ error: 'Influencer with this email already exists' });
     }
-    
+
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newInfluencer = new Influencer({ email, password: hashedPassword });
+    const newInfluencer = new Influencer({ email, password: hashedPassword,name,buzzname });
     await newInfluencer.save();
-    
-    res.status(201).json({ message: 'Influencer registered successfully' });
+
+    // Generate a token with userType set to 'influencer'
+    const token = jwt.sign({ userId: newInfluencer._id, userType: 'influencer' }, 'krishna', { expiresIn: '1h' });
+
+    res.status(201).json({ message: 'Influencer registered successfully', token });
   } catch (error) {
     res.status(500).json({ error: 'Error registering influencer' });
   }
 });
+
 
 
 

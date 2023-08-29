@@ -37,12 +37,21 @@ const Wireframe19 = () => {
 
         // Handle successful response here (e.g., redirect or show a success message)
         console.log('Registration successful', response.data);
-        window.location.href = '/';
+
+        // Assuming the token is returned in the response
+        const token = response.data.token;
+
+        // Store the token in localStorage
+        localStorage.setItem('token', token);
+
+        // Redirect to the desired page
+        window.location.href = '/buzzfluencerview';
     } catch (error) {
         // Handle error here (e.g., show an error message)
         console.error('Registration failed', error);
     }
 };
+
   return (
     <div className={styles.wireframe19}>
       <section className={styles.signUpFor}>SIGN UP FOR BUZZFLUENCERS</section>
