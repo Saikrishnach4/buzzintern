@@ -38,10 +38,11 @@ const Wireframe3 = () => {
     })
     .then(response => {
       console.log('User enrolled in cohort:', response.data);
-      // Handle any UI changes or feedback here
+      window.location.href = '/userview';
     })
     .catch(error => {
       console.error('Error enrolling in cohort:', error);
+      window.location.href = '/userview';
     });
   };
   return (
@@ -55,7 +56,7 @@ const Wireframe3 = () => {
             <img className={styles.frameItem} alt="" src="/group-2@2x.png" />
             <button  onClick={() => handleCohortClick({
                 name: 'Nicholas Keinan',
-                bio: 'Food and Beverage influencer. Mentorship in culinary arts.',
+                category: 'Food and Beverage influencer. Mentorship in culinary arts.',
                 image: '/group-2@2x.png', // Add the image URL here
                 // Other influencer details
               })} className={styles.joinMyCohortWrapper}>
@@ -69,7 +70,7 @@ const Wireframe3 = () => {
             <img className={styles.frameItem} alt="" src="/group-12@2x.png" />
             <button onClick={() => handleCohortClick({
                 name: 'Lisa pedrinho',
-                bio: 'lifestyle',
+                category: 'lifestyle',
                 image: '/group-12@2x.png', // Add the image URL here
                 // Other influencer details
               })} className={styles.rectangleContainer}>
@@ -84,7 +85,7 @@ const Wireframe3 = () => {
             <img className={styles.frameItem} alt="" src="/group-14@2x.png" />
             <button  onClick={() => handleCohortClick({
                 name: 'Zac Marino',
-                bio: 'Music and Performing Arts',
+                category: 'Music and Performing Arts',
                 image: '/group-14@2x.png', // Add the image URL here
                 // Other influencer details
               })} className={styles.frameButton}>
@@ -101,7 +102,7 @@ const Wireframe3 = () => {
             <img className={styles.frameChild5} alt="" src="/group-111@2x.png" />
             <button onClick={() => handleCohortClick({
                 name: 'Gwendoline',
-                bio: 'Fashion and Thrift',
+                category: 'Fashion and Thrift',
                 image: '/group-111@2x.png', // Add the image URL here
                 // Other influencer details
               })} className={styles.rectangleParent2}>
@@ -116,7 +117,7 @@ const Wireframe3 = () => {
             <img className={styles.frameChild5} alt="" src="/group-111@2x.png" />
             <button onClick={() => handleCohortClick({
                 name: 'Carina Williams',
-                bio: 'Travel and Tourism',
+                category: 'Travel and Tourism',
                 image: '/group-12@2x.png', // Add the image URL here
                 // Other influencer details
               })} className={styles.rectangleParent4}>

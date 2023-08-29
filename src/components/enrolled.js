@@ -8,13 +8,14 @@ const Wireframe21 = () => {
   useEffect(() => {
     // Fetch the user's enrolled cohorts from the server
     const token = localStorage.getItem('token'); // Assuming you store the token in local storage
-    axios.get('http://localhost:5000/user/enrolled-cohorts', {
+    axios.get('http://localhost:5000/enrolled-cohorts', {
       headers: {
         Authorization: `Bearer ${token}`
       }
     })
     .then(response => {
       setEnrolledCohorts(response.data.cohorts);
+      
     })
     .catch(error => {
       console.error('Error fetching enrolled cohorts:', error);
@@ -22,34 +23,24 @@ const Wireframe21 = () => {
   }, []);
 
   return (
-    <div className={styles.wireframe21}>
-      <div className={styles.myCohorts}>My Cohorts</div>
-      <img
-        className={styles.iconamoonmenuBurgerHorizont}
-        alt=""
-        src="/iconamoonmenuburgerhorizontalbold.svg"
-      />
-      {enrolledCohorts.map(cohort => (
-        <div key={cohort._id}>
-          <div className={styles.wireframe21Child} />
-          <div className={styles.wireframe21Item} />
-          <img className={styles.wireframe21Inner} alt="" src={cohort.image} />
-          <div className={styles.lisaPedrinho}>{cohort.name}</div>
-          <div className={styles.lifestyle}>{cohort.category}</div>
-          <img className={styles.vectorIcon} alt="" src="/vector.svg" />
-          <img className={styles.vectorIcon1} alt="" src="/vector.svg" />
-          <img className={styles.vectorIcon2} alt="" src="/vector1.svg" />
-          <img className={styles.vectorIcon3} alt="" src="/vector1.svg" />
-          <img className={styles.rectangleIcon} alt="" src="/rectangle-60.svg" />
-          <img
-            className={styles.wireframe21Child1}
-            alt=""
-            src="/rectangle-60.svg"
-          />
-          <div className={styles.inProgress}>In Progress</div>
-          <div className={styles.div}>12:00:00</div>
-        </div>
-      ))}
+    <div className={styles.maindiv}>
+      <div className={styles.heading}>My Cohorts</div>
+      <div className={styles.parts}>
+        {enrolledCohorts.map(cohort => (
+          <div key={cohort._id} className={styles.subdiv}>
+            <img className={styles.img} src={cohort.image} alt={cohort.name} />
+            <div className={styles.subdiv1}>
+              <h3 className={styles.h3}>{cohort.name}</h3>
+              <h4 className={styles.h4}>{cohort.category}</h4>
+              {console.log('Category:', cohort)}
+              <svg className={styles.svg} xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M71.7325 31.6476C72.7282 39.821 70.892 48.0887 66.5299 55.0722C62.1679 62.0556 55.5437 67.3327 47.762 70.0235C39.9802 72.7143 31.5112 72.6561 23.7672 69.8587C16.0231 67.0612 9.47204 61.6937 5.20635 54.651C4.7421 53.8854 4.601 52.9667 4.81408 52.0971C5.02717 51.2274 5.57698 50.4781 6.34257 50.0138C7.10816 49.5496 8.02682 49.4085 8.89645 49.6216C9.76608 49.8346 10.5154 50.3845 10.9797 51.1501C13.2775 54.9444 16.4083 58.1665 20.1351 60.5724C23.8619 62.9782 28.0871 64.5049 32.491 65.0369C36.8949 65.5689 41.3621 65.0923 45.5546 63.643C49.7471 62.1938 53.5551 59.81 56.6903 56.6719C59.8256 53.5338 62.206 49.7237 63.6515 45.5299C65.097 41.3361 65.5696 36.8685 65.0337 32.4651C64.4978 28.0616 62.9673 23.8378 60.5581 20.1131C58.1488 16.3885 54.924 13.2606 51.1276 10.9662C50.3614 10.5031 49.8105 9.75468 49.5962 8.88547C49.3818 8.01626 49.5215 7.09751 49.9846 6.33132C50.4476 5.56513 51.1961 5.01427 52.0653 4.79992C52.9345 4.58558 53.8533 4.7253 54.6195 5.18835C59.2915 8.01242 63.26 11.8621 66.2248 16.4461C69.1896 21.0301 71.073 26.2284 71.7325 31.6476ZM40.4989 4.49987C40.4989 5.69331 40.0248 6.83787 39.1809 7.68176C38.337 8.52565 37.1924 8.99975 35.999 8.99975C34.8055 8.99975 33.661 8.52565 32.8171 7.68176C31.9732 6.83787 31.4991 5.69331 31.4991 4.49987C31.4991 3.30643 31.9732 2.16187 32.8171 1.31798C33.661 0.474092 34.8055 0 35.999 0C37.1924 0 38.337 0.474092 39.1809 1.31798C40.0248 2.16187 40.4989 3.30643 40.4989 4.49987ZM12.6176 22.4994C12.9178 21.9874 13.1137 21.4211 13.1941 20.8332C13.2745 20.2452 13.2378 19.6471 13.0861 19.0734C12.9344 18.4997 12.6707 17.9616 12.3102 17.4902C11.9498 17.0188 11.4996 16.6233 10.9857 16.3266C10.4717 16.0299 9.90418 15.8377 9.31569 15.7612C8.72719 15.6847 8.12938 15.7254 7.55667 15.8809C6.98396 16.0364 6.44766 16.3036 5.97865 16.6672C5.50964 17.0308 5.11718 17.4836 4.82386 17.9995C4.23655 19.0325 4.08167 20.2558 4.39301 21.4026C4.70434 22.5493 5.45663 23.5264 6.48569 24.1206C7.51476 24.7147 8.73706 24.8777 9.88585 24.574C11.0347 24.2703 12.0167 23.5245 12.6176 22.4994ZM4.49987 31.4991C5.69331 31.4991 6.83787 31.9732 7.68176 32.8171C8.52565 33.661 8.99975 34.8055 8.99975 35.999C8.99975 37.1924 8.52565 38.337 7.68176 39.1809C6.83787 40.0248 5.69331 40.4989 4.49987 40.4989C3.30643 40.4989 2.16187 40.0248 1.31798 39.1809C0.474092 38.337 0 37.1924 0 35.999C0 34.8055 0.474092 33.661 1.31798 32.8171C2.16187 31.9732 3.30643 31.4991 4.49987 31.4991ZM22.4994 12.6176C23.0153 12.3243 23.468 11.9319 23.8316 11.4629C24.1952 10.9938 24.4625 10.4575 24.6179 9.88484C24.7734 9.31212 24.8141 8.71431 24.7376 8.12582C24.6611 7.53733 24.469 6.96978 24.1723 6.45584C23.8755 5.94191 23.4801 5.49175 23.0087 5.13127C22.5372 4.77079 21.9992 4.50712 21.4255 4.35543C20.8517 4.20375 20.2537 4.16704 19.6657 4.24744C19.0777 4.32783 18.5114 4.52373 17.9995 4.82386C16.9744 5.42482 16.2286 6.40686 15.9249 7.55565C15.6212 8.70445 15.7842 9.92675 16.3783 10.9558C16.9724 11.9849 17.9495 12.7372 19.0963 13.0485C20.243 13.3598 21.4664 13.205 22.4994 12.6176Z" fill="#333333" />
+                    </svg>
+            </div>
+            {/* Add the rest of your JSX here */}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

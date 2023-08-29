@@ -6,6 +6,7 @@ const influencerRoutes = require('./routes/influencer');
 const db = require('./db');
 const Cohort = require('./models/cohorts');
 const User = require('./models/User');
+const Influencer = require("./models/Influencer")
 const jwt = require("jsonwebtoken")
 const app = express();
 
@@ -119,17 +120,48 @@ app.get('/enrolled-cohorts', async (req, res) => {
     // Decode the token to get the user's ID
     const decodedToken = jwt.verify(token, 'krishna'); // Replace with your actual secret key
     const userId = decodedToken.userId;
-
+   
     // Fetch the user's enrolled cohorts from the database
     const user = await User.findById(userId);
     const enrolledCohorts = user.cohorts;
-
+   console.log(enrolledCohorts)
     res.status(200).json({ cohorts: enrolledCohorts });
   } catch (error) {
     console.error('Error fetching enrolled cohorts:', error);
     res.status(500).json({ error: 'Error fetching enrolled cohorts' });
   }
 });
+app.get('/influencerdetails', authMiddleware, async (req, res) => {
+  try {
+    const token = req.headers.authorization;
+    const decodedToken = jwt.verify(token, secretKey);
+    const userId = decodedToken.userId; // Assuming you have userId in the token payload
+    console.log("hello", userId)
+    const influencer = await Influencer.findById(userId);
+    console.log(influencer.name)
+    
+    if (!influencer) {
+      return res.status(404).json({ message: 'Influencer not found' });
+    }
+
+    const influencerDetails = {
+      email: influencer.email,
+      buzzname: influencer.buzzname,
+      name: influencer.name,
+      // Add more influencer details as needed
+    };
+
+    res.json(influencerDetails);
+  } catch (error) {
+    if (error.name === 'TokenExpiredError') {
+      return res.status(401).json({ error: 'Token expired' });
+    }
+    console.error('Error fetching influencer details:', error);
+    res.status(500).json({ error: 'Error fetching influencer details' });
+  }
+});
+
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

@@ -3,24 +3,46 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 const BuzzfluencerView = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
+  const [influencerDetails, setInfluencerDetails] = useState({
+    email: "",
+    buzzname: "",
+    name: ""
+  });
 
+  // Effect to check authorization
   useEffect(() => {
-      // Make an API call to check authorization
-      axios.get('http://localhost:5000/', {
-          headers: {
-              Authorization: localStorage.getItem('token') // Assuming token is stored in localStorage
-          }
+    axios.get('http://localhost:5000/', {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
+    })
+    .then(response => {
+      setIsAuthorized(true);
+    })
+    .catch(error => {
+      setIsAuthorized(false);
+    });
+  }, []);
+
+  // Effect to fetch influencer details
+  useEffect(() => {
+    if (isAuthorized) {
+      axios.get('http://localhost:5000/influencerdetails', {
+        headers: {
+          Authorization: localStorage.getItem('token')
+        }
       })
       .then(response => {
-          // If the response is successful, user is authorized
-          console.log("success")
-          setIsAuthorized(true);
+        setInfluencerDetails(response.data);
       })
       .catch(error => {
-        console.log("fail")
-          setIsAuthorized(false);
+        console.error('Error fetching influencer details:', error);
       });
-  }, []);
+    }
+  }, [isAuthorized]);
+  useEffect(() => {
+    console.log(localStorage.getItem('token'))
+  }, );
   return (
     <div className={styles.buzzfluencerView}>
       {isAuthorized?(
@@ -35,7 +57,7 @@ const BuzzfluencerView = () => {
         alt=""
         src="/group-11@2x.png"
       />
-      <div className={styles.gwendoline}>Gwendoline</div>
+      <div className={styles.gwendoline}>{influencerDetails.buzzname}</div>
       <div className={styles.gwendyyy}>@gwendyyy</div>
       <img className={styles.vectorIcon2} alt="" src="/vector6.svg" />
       <div className={styles.k}>150K</div>
