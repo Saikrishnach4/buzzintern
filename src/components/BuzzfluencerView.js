@@ -27,22 +27,21 @@ const BuzzfluencerView = () => {
   // Effect to fetch influencer details
   useEffect(() => {
     if (isAuthorized) {
-      axios.get('http://localhost:5000/influencerdetails', {
+      axios.get('http://localhost:5000/influencerdata', {
         headers: {
           Authorization: localStorage.getItem('token')
         }
       })
       .then(response => {
         setInfluencerDetails(response.data);
+        console.log(response.data.influencer.buzzname)
       })
       .catch(error => {
         console.error('Error fetching influencer details:', error);
       });
     }
   }, [isAuthorized]);
-  useEffect(() => {
-    console.log(localStorage.getItem('token'))
-  }, );
+ 
   return (
     <div className={styles.buzzfluencerView}>
       {isAuthorized?(
@@ -57,7 +56,8 @@ const BuzzfluencerView = () => {
         alt=""
         src="/group-11@2x.png"
       />
-      <div className={styles.gwendoline}>{influencerDetails.buzzname}</div>
+      <div className={styles.gwendoline}>{influencerDetails.influencer.buzzname}</div>
+      {console.log(influencerDetails.buzzname)}
       <div className={styles.gwendyyy}>@gwendyyy</div>
       <img className={styles.vectorIcon2} alt="" src="/vector6.svg" />
       <div className={styles.k}>150K</div>

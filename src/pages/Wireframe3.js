@@ -4,6 +4,7 @@ import axios from "axios";
 const Wireframe3 = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [selectedInfluencer, setSelectedInfluencer] = useState(null);
+  const [influencerData, setInfluencerData] = useState([]);
   useEffect(() => {
     // Log the token value from localStorage
     const token = localStorage.getItem('token');
@@ -45,94 +46,53 @@ const Wireframe3 = () => {
       window.location.href = '/userview';
     });
   };
+  useEffect(() => {
+    // Fetch influencer details
+    fetchInfluencerDetails();
+  }, []);
+
+  const fetchInfluencerDetails = () => {
+    axios
+      .get("http://localhost:5000/influencersdetailsdata")
+      .then((response) => {
+        setInfluencerData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching influencer details:", error);
+      });
+  };
+
+
+
+
   return (
     <div className={styles.wireframe3}>
       {isAuthorized ? (
-
         <>
-          <div className={styles.yourMentors}>Your Mentors</div>
-          <div className={styles.rectangleParent}>
-            <div className={styles.frameChild} />
-            <img className={styles.frameItem} alt="" src="/group-2@2x.png" />
-            <button  onClick={() => handleCohortClick({
-                name: 'Nicholas Keinan',
-                category: 'Food and Beverage influencer. Mentorship in culinary arts.',
-                image: '/group-2@2x.png', // Add the image URL here
-                // Other influencer details
-              })} className={styles.joinMyCohortWrapper}>
-              <div className={styles.joinMyCohort}>join my cohort</div>
-            </button>
-            <div className={styles.nicholasKeinan}>Nicholas Keinan</div>
-            <div className={styles.foodAndBeverage}>Food and Beverage</div>
-          </div>
-          <div className={styles.rectangleGroup}>
-            <div className={styles.frameChild} />
-            <img className={styles.frameItem} alt="" src="/group-12@2x.png" />
-            <button onClick={() => handleCohortClick({
-                name: 'Lisa pedrinho',
-                category: 'lifestyle',
-                image: '/group-12@2x.png', // Add the image URL here
-                // Other influencer details
-              })} className={styles.rectangleContainer}>
-              <div className={styles.rectangleDiv} />
-              <div  className={styles.joinMyCohort1}>join my cohort</div>
-            </button>
-            <div className={styles.lisaPedrinho}>Lisa Pedrinho</div>
-            <div className={styles.lifestyle}>Lifestyle</div>
-          </div>
-          <div className={styles.frameDiv}>
-            <div className={styles.frameChild} />
-            <img className={styles.frameItem} alt="" src="/group-14@2x.png" />
-            <button  onClick={() => handleCohortClick({
-                name: 'Zac Marino',
-                category: 'Music and Performing Arts',
-                image: '/group-14@2x.png', // Add the image URL here
-                // Other influencer details
-              })} className={styles.frameButton}>
-              <div className={styles.frameChild3} />
-              <div className={styles.joinMyCohort1}>join my cohort</div>
-            </button>
-            <div className={styles.zacMarino}>Zac Marino</div>
-            <div className={styles.musicAndPerforming}>
-              Music and Performing Arts
+          {influencerData.map((influencer) => (
+            <div key={influencer._id} className={styles.rectangleParent}>
+              <div className={styles.frameChild} />
+              <img
+                className={styles.frameItem}
+                alt=""
+                src={influencer.image} // Replace with the actual image URL
+              />
+              <button
+                onClick={() => handleCohortClick(influencer)}
+                className={styles.joinMyCohortWrapper}
+              >
+                <div className={styles.joinMyCohort}>join my cohort</div>
+              </button>
+              <div className={styles.influencerName}>{influencer.name}</div>
+              <div className={styles.influencerCategory}>
+                {influencer.category}
+              </div>
             </div>
-          </div>
-          <div className={styles.rectangleParent1}>
-            <div className={styles.frameChild4} />
-            <img className={styles.frameChild5} alt="" src="/group-111@2x.png" />
-            <button onClick={() => handleCohortClick({
-                name: 'Gwendoline',
-                category: 'Fashion and Thrift',
-                image: '/group-111@2x.png', // Add the image URL here
-                // Other influencer details
-              })} className={styles.rectangleParent2}>
-              <div className={styles.frameChild6} />
-              <div className={styles.joinMyCohort3}>join my cohort</div>
-            </button>
-            <div className={styles.gwendoline}>Gwendoline</div>
-            <div className={styles.fashionAndThrift}>Fashion and Thrift</div>
-          </div>
-          <div className={styles.rectangleParent3}>
-            <div className={styles.frameChild4} />
-            <img className={styles.frameChild5} alt="" src="/group-111@2x.png" />
-            <button onClick={() => handleCohortClick({
-                name: 'Carina Williams',
-                category: 'Travel and Tourism',
-                image: '/group-12@2x.png', // Add the image URL here
-                // Other influencer details
-              })} className={styles.rectangleParent4}>
-              <div className={styles.frameChild9} />
-              <div className={styles.joinMyCohort1}>join my cohort</div>
-            </button>
-            <div className={styles.carinaWilliams}>Carina Williams</div>
-            <div className={styles.travelAndTourism}>Travel and Tourism</div>
-          </div>
+          ))}
         </>
       ) : (
-        // Render the unauthorized message or component
         <div>You are not authorized to access this page.</div>
       )}
-
     </div>
   );
 };

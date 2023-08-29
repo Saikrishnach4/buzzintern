@@ -160,7 +160,50 @@ app.get('/influencerdetails', authMiddleware, async (req, res) => {
     res.status(500).json({ error: 'Error fetching influencer details' });
   }
 });
+// Fetch influencer details using token
+app.get('/influencerdata', authMiddleware, async (req, res) => {
+  try {
+    const token = req.headers.authorization;
+    const decodedToken = jwt.verify(token, secretKey);
+    const influencerId = decodedToken.userId;
 
+    const influencer = await Influencer.findById(influencerId);
+  
+    if (!influencer) {
+      return res.status(404).json({ message: 'Influencer not found' });
+    }
+
+    const influencerDetails = {
+      email: influencer.email,
+      buzzname: influencer.buzzname,
+      name: influencer.name,
+      // Add more influencer details as needed
+    };
+
+   
+    const enrolledUsers = await User.find({ 'cohorts.name': influencer.name });
+    console.log('Enrolled Users:', enrolledUsers);
+    res.json({ influencer: influencerDetails, enrolledUsers });
+  } catch (error) {
+    if (error.name === 'TokenExpiredError') {
+      return res.status(401).json({ error: 'Token expired' });
+    }
+    console.error('Error fetching influencer details:', error);
+    res.status(500).json({ error: 'Error fetching influencer details' });
+  }
+});
+
+// Assuming you have a model named 'Influencer' for influencers
+
+app.get('/influencersdetailsdata', async (req, res) => {
+  try {
+    const influencers = await Influencer.find();
+    res.json(influencers);
+  } catch (error) {
+    console.error('Error fetching influencer data:', error);
+    res.status(500).json({ error: 'Error fetching influencer data' });
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
