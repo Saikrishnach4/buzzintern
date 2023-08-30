@@ -9,11 +9,13 @@ import UserView from "./components/UserView";
 import Wireframe20 from "./components/Wireframe20";
 import Wireframe3 from "./pages/Wireframe3";
 import Wireframe19 from "./pages/Wireframe19";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import Login from "./components/login";
 import User from "./components/user";
 import Wireframe21 from "./components/enrolled";
+import { EmailProvider, InfluencerProvider } from "./components/influencercontext";
 
+import Videoframe from "./components/video";
 function App() {
   const action = useNavigationType();
   const location = useLocation();
@@ -65,20 +67,23 @@ function App() {
       }
     }
   }, [pathname]);
- 
 
- 
+
+
   return (
-    <Routes>
-    <Route path="/" element={<Login />} />
-    <Route path="/accountdashboard" element={<Wireframe20 />} />
-    <Route path="/mentors" element={<Wireframe3 />} />
-    <Route path="/influencersignup" element={<Wireframe19 />} />
-    <Route path="/buzzfluencerview" element={<BuzzfluencerView />} />
-    <Route path="/usersignup" element={<User />} />
-    <Route path="/enrolled" element={<Wireframe21 />} />
-    
-  </Routes>
+    <EmailProvider><Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/accountdashboard" element={<Wireframe20 />} />
+      <Route path="/mentors" element={<Wireframe3 />} />
+      <Route path="/influencersignup" element={<Wireframe19 />} />
+      <Route path="/buzzfluencerview" element={<BuzzfluencerView />} />
+      <Route path="/usersignup" element={<User />} />
+      <Route path="/enrolled" element={<Wireframe21 />} />
+      <Route path="/userview" element={<UserView />} />
+      <Route path="/video" element={<Videoframe />} />
+
+    </Routes></EmailProvider>
+
   );
 }
 export default App;

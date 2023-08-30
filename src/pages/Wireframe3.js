@@ -1,8 +1,10 @@
 import styles from "./Wireframe3.module.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useEmailContext } from '../components/influencercontext';
 const Wireframe3 = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
+  const { email, updateEmail } = useEmailContext();
   const [selectedInfluencer, setSelectedInfluencer] = useState(null);
   const [influencerData, setInfluencerData] = useState([]);
   useEffect(() => {
@@ -27,30 +29,35 @@ const Wireframe3 = () => {
       });
   }, []);
   const handleCohortClick = (influencer) => {
-    setSelectedInfluencer(influencer);
-   console.log(influencer)
+    updateEmail(influencer.email);
     // Get the user's token from local storage
     const token = localStorage.getItem('token');
+// Storing email in localStorage
+localStorage.setItem('email', influencer.email);
 
     // Send the selected influencer's details and the user's token to the server for enrollment
     axios.post('http://localhost:5000/selected', {
       token: token,
       cohortDetails: influencer
     })
-    .then(response => {
-      console.log('User enrolled in cohort:', response.data);
-      window.location.href = '/userview';
-    })
-    .catch(error => {
-      console.error('Error enrolling in cohort:', error);
-      window.location.href = '/userview';
-    });
+      .then(response => {
+        console.log('User enrolled in cohort:', response.data);
+        
+        window.location.href = '/userview';
+      })
+      .catch(error => {
+        console.error('Error enrolling in cohort:', error);
+        
+        window.location.href = '/userview';
+      });
   };
   useEffect(() => {
     // Fetch influencer details
     fetchInfluencerDetails();
   }, []);
-
+  useEffect(() => {
+    console.log('Influencer Email:', email);
+  }, [email]);
   const fetchInfluencerDetails = () => {
     axios
       .get("http://localhost:5000/influencersdetailsdata")

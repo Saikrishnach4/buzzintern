@@ -1,0 +1,174 @@
+.frameChild {
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    background-color: var(--color-mediumorchid);
+    width: 566px;
+    height: 1081px;
+  }
+  .roadmap,
+  .tutorial {
+    position: absolute;
+    top: calc(50% - 467px);
+    font-size: 74.07px;
+    display: inline-block;
+    width: 569px;
+  }
+  .roadmap {
+    left: 0;
+    font-family: var(--font-roboto);
+    color: var(--color-white);
+    text-shadow: 4px 4px 0#1e1e1e;
+  }
+  .tutorial {
+    left: 742px;
+    color: var(--color-mediumorchid);
+    text-align: left;
+    text-shadow: 2px 2px 0#fff;
+  }
+  .week1 {
+    position: absolute;
+    top: 234px;
+    left: 187.67px;
+  }
+  .frameItem,
+  .week2,
+  .week3,
+  .week4 {
+    position: absolute;
+    top: 432.67px;
+    left: 187.67px;
+  }
+  .frameItem,
+  .week3,
+  .week4 {
+    top: 631.33px;
+  }
+  .frameItem,
+  .week4 {
+    top: 830px;
+  }
+  .frameItem {
+    top: 234px;
+    left: 81px;
+    width: 54.67px;
+    height: 650.67px;
+  }
+  .assignment1,
+  .problemStatement,
+  .tools,
+  .tutorialVideo {
+    position: absolute;
+    top: 0;
+    left: 17.33px;
+    text-decoration: underline;
+    display: inline-block;
+    width: 293.33px;
+    height: 22.67px;
+  }
+  .assignment1,
+  .tools,
+  .tutorialVideo {
+    top: 22.67px;
+  }
+  .assignment1,
+  .tools {
+    top: 45.33px;
+    color: var(--color-white);
+  }
+  .assignment1 {
+    top: 68px;
+  }
+  .ellipseDiv,
+  .groupChild,
+  .groupInner,
+  .groupItem {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    border-radius: 50%;
+    background-color: var(--color-mediumspringgreen);
+    width: 10.67px;
+    height: 10.67px;
+  }
+  .ellipseDiv,
+  .groupInner,
+  .groupItem {
+    top: 25.33px;
+    background-color: var(--color-white);
+  }
+  .ellipseDiv,
+  .groupInner {
+    top: 48px;
+  }
+  .ellipseDiv {
+    top: 70.67px;
+  }
+  .vectorIcon {
+    position: absolute;
+    height: 6.34%;
+    width: 2.33%;
+    top: 7.4%;
+    right: 97.12%;
+    bottom: 86.26%;
+    left: 0.55%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .problemStatementParent {
+    position: absolute;
+    top: 316px;
+    left: 188px;
+    width: 310.67px;
+    height: 90.67px;
+    text-align: left;
+    font-size: var(--font-size-base);
+  }
+  .div,
+  .wrapper {
+    position: absolute;
+    top: 271px;
+    left: 748px;
+    width: 1029px;
+    height: 509px;
+  }
+  .div {
+    top: 74px;
+    left: 1725px;
+    font-size: 64.41px;
+    font-family: var(--font-roboto);
+    color: var(--color-mediumorchid);
+    text-align: left;
+    display: inline-block;
+    width: 35px;
+    height: 111.1px;
+  }
+  .frameInner {
+    position: absolute;
+    top: 84px;
+    left: 1697px;
+    border-radius: 50%;
+    border: 3px solid var(--color-mediumorchid);
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+  }
+  .groupIcon {
+    position: absolute;
+    top: 893px;
+    left: 1691px;
+    width: 103px;
+    height: 103px;
+  }
+  .rectangleParent {
+    position: relative;
+    background-color: var(--color-gray-100);
+    width: 1923px;
+    height: 1082px;
+    text-align: center;
+    font-size: 50.67px;
+    color: var(--color-gray-100);
+    font-family: var(--font-black-han-sans);
+  }
+  

@@ -72,7 +72,7 @@
 }
 .rectangleDiv,
 .rectangleParent {
-  position: absolute;
+  position: relative;
   top: 203px;
   left: -584px;
   width: 2374.41px;

@@ -1,7 +1,26 @@
 import styles from "./UserView.module.css";
-
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from 'react-router-dom';
 const UserView = () => {
- 
+
+  // Retrieving email from localStorage
+
+  const [influencerDetails, setInfluencerDetails] = useState('');
+  const email = localStorage.getItem("email");
+  
+  useEffect(() => {
+    // Fetch influencer details for the given email
+    axios.get(`http://localhost:5000/influencer/${email}`)
+      .then(response => {
+        setInfluencerDetails(response.data);
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching influencer details:', error);
+      });
+  }, [email]);
+  
   return (
     <div className={styles.userView}>
       <img className={styles.vectorIcon} alt="" src="/vector4.svg" />
@@ -11,7 +30,7 @@ const UserView = () => {
       <div className={styles.followers}>Followers</div>
       <div className={styles.engagement}>Engagement</div>
       <img className={styles.userViewChild} alt="" src="/group-11@2x.png" />
-      <div className={styles.gwendoline}>Gwendoline</div>
+      <div className={styles.gwendoline}>{influencerDetails.buzzname}</div>
       <div className={styles.gwendyyy}>@gwendyyy</div>
       <img className={styles.vectorIcon2} alt="" src="/vector6.svg" />
       <div className={styles.k}>150K</div>
@@ -27,10 +46,10 @@ const UserView = () => {
         suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus
         ante fermentum sit amet. Pellentesque commodo lacus at sodales.
       </div>
-      <button className={styles.rectangleParent}>
-        <div className={styles.groupChild} />
-        <div className={styles.joinMyCohort}>join my cohort</div>
-      </button>
+      <Link to="/video" className={styles.rectangleParent}>
+      <div className={styles.groupChild} />
+      <div className={styles.joinMyCohort}>join my cohort</div>
+    </Link>
       <div className={styles.whatYouCan}>what you can expect ?</div>
       <div className={styles.cohortJourney}>
         <p className={styles.cohort}>Cohort</p>
@@ -88,6 +107,7 @@ const UserView = () => {
         <div className={styles.frameChild1} />
       </div>
     </div>
+    
   );
 };
 

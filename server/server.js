@@ -9,7 +9,8 @@ const User = require('./models/User');
 const Influencer = require("./models/Influencer")
 const jwt = require("jsonwebtoken")
 const app = express();
-
+const path = require('path');
+const fs = require('fs');
 const port = process.env.PORT || 5000;
 
 app.use(cors());
@@ -182,7 +183,7 @@ app.get('/influencerdata', authMiddleware, async (req, res) => {
 
    
     const enrolledUsers = await User.find({ 'cohorts.name': influencer.name });
-    console.log('Enrolled Users:', enrolledUsers);
+    // console.log('Enrolled Users:', enrolledUsers);
     res.json({ influencer: influencerDetails, enrolledUsers });
   } catch (error) {
     if (error.name === 'TokenExpiredError') {
@@ -194,6 +195,22 @@ app.get('/influencerdata', authMiddleware, async (req, res) => {
 });
 
 // Assuming you have a model named 'Influencer' for influencers
+app.get('/influencer/:email', async (req, res) => {
+  const { email } = req.params;
+
+  try {
+    const influencer = await Influencer.findOne({ email });
+    if (!influencer) {
+      return res.status(404).json({ error: 'Influencer not found' });
+    }
+
+    res.json(influencer);
+  } catch (error) {
+    console.error('Error fetching influencer data:', error);
+    res.status(500).json({ error: 'Error fetching influencer data' });
+  }
+});
+
 
 app.get('/influencersdetailsdata', async (req, res) => {
   try {
@@ -204,6 +221,32 @@ app.get('/influencersdetailsdata', async (req, res) => {
     res.status(500).json({ error: 'Error fetching influencer data' });
   }
 });
+app.use(express.static(path.join(__dirname, 'build')));
+
+
+app.use('/videos', express.static('videos'));
+
+// Map email addresses to video URLs
+const emailToVideoMap = {
+  '20d41a0440@gmail.com': '/videos/pexels-peter-fowler-6394054 (2160p).mp4',
+  'saikrishnachippa1234@gmail.com': '/videos/pexels-taryn-elliott-8820216 (2160p).mp4',
+  '20d41a0441@gmail.com': '/videos/video (2160p).mp4'
+};
+
+app.get('/influencervideo', (req, res) => {
+  // Get the email from the query parameter
+  const email = req.query.email;
+
+  // Look up the video URL based on the email
+  const videoUrl = emailToVideoMap[email];
+
+  if (videoUrl) {
+    res.json({ videoUrl });
+  } else {
+    res.status(404).json({ error: 'Video not found for the provided email' });
+  }
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
