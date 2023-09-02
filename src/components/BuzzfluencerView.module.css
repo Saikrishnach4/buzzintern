@@ -250,16 +250,23 @@
   height: 75px;
   overflow: hidden;
 }
+.parent{
+  display: flex;
+    position: relative;
+    top: 373px;
+    flex-wrap: wrap;
+    gap: 50px;
+}
 .frameChild,
 .frameItem {
-  position: absolute;
+  position: relative;
   top: 9.6px;
   left: 104px;
   width: 345.5px;
   height: 381.57px;
 }
 .frameItem {
-  top: 63.71px;
+  top: -318.28999999999996px;
   left: 205.29px;
   border-radius: 226.17px;
   background-color: var(--color-white);

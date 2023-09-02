@@ -56,11 +56,11 @@ position: relative;
 .parts{
     display: flex;
     margin-top: 9rem;
-    gap: 10px;
+    gap: 100px;
     flex-direction: column;
 }
 .svg{
     position: relative;
     right: -1002px;
-    top: -225px;
+    top: -130px;
 }

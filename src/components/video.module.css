@@ -132,6 +132,16 @@
     left: 748px;
     width: 1029px;
     height: 509px;
+    border-radius: 21px;
+  }
+  .videowrapper{
+    width: 1029px;
+    height: 509px;
+    border-radius: 21px;
+    position: relative;
+    top: 270px;
+    left: 750px;
+    background: #C76BFF;
   }
   .div {
     top: 74px;

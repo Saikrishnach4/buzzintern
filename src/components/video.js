@@ -2,23 +2,23 @@ import styles from "./video.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 const Videoframe = () => {
-    const [videoUrl, setVideoUrl] = useState('');
-    const email = localStorage.getItem("email");
-    useEffect(() => {
-      // Fetch a random video URL for the given influencer email
-      axios.get('http://localhost:5000/influencervideo', {
-        params: {
-          email: email
-        }
+  const [videoUrl, setVideoUrl] = useState('');
+  const email = localStorage.getItem("email");
+  useEffect(() => {
+    // Fetch a random video URL for the given influencer email
+    axios.get('http://localhost:5000/influencervideo', {
+      params: {
+        email: email
+      }
+    })
+      .then(response => {
+        setVideoUrl(`http://localhost:5000${response.data.videoUrl}`);
+        console.log(response.data)
       })
-        .then(response => {
-          setVideoUrl(`http://localhost:5000${response.data.videoUrl}`);
-          console.log(response.data)
-        })
-        .catch(error => {
-          console.error('Error fetching video URL:', error);
-        });
-    }, [email]);
+      .catch(error => {
+        console.error('Error fetching video URL:', error);
+      });
+  }, [email]);
   return (
     <div className={styles.rectangleParent}>
       <div className={styles.frameChild} />
@@ -41,15 +41,21 @@ const Videoframe = () => {
         <img className={styles.vectorIcon} alt="" src="/vector.svg" />
       </div>
       {videoUrl ? (
+        <div>
+        <div className={styles.videowrapper}/>
         <video className={styles.wrapper} autoPlay
-                loop controls width="600">
+          loop controls width="600">
           <source src={videoUrl} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        </div>
+        
+        
+        
       ) : (
         <p>No video available.</p>
       )}
-      
+
       <div className={styles.div}>{`>`}</div>
       <div className={styles.frameInner} />
       <img className={styles.groupIcon} alt="" src="/group-96.svg" />
