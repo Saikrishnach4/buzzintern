@@ -9,7 +9,7 @@ const videoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // Other video details
+ 
 });
 
 const influencerSchema = new mongoose.Schema({
@@ -30,7 +30,7 @@ const influencerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  videos: [videoSchema], // Embed videos within influencer schema
+  videos: [videoSchema], 
 });
 
 const Influencer = mongoose.model('Influencer', influencerSchema);

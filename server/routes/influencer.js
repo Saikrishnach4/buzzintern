@@ -4,7 +4,7 @@ const Influencer = require('../models/Influencer');
 
 const router = express.Router();
 
-// Protected route for influencers
+
 router.get('/dashboard', async (req, res) => {
   const token = req.headers.authorization.split(' ')[1];
   try {
@@ -12,7 +12,7 @@ router.get('/dashboard', async (req, res) => {
     if (decodedToken) {
       const influencer = await Influencer.findById(decodedToken.id);
       if (influencer) {
-        // Do something for influencer dashboard
+     
         res.json({ message: 'Welcome to the influencer dashboard' });
       } else {
         res.status(404).json({ error: 'Influencer not found' });

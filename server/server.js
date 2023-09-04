@@ -33,8 +33,8 @@ const authMiddleware = (req, res, next) => {
       return res.status(401).json({ message: 'Unauthorized' });
     }
     
-    req.userType = decoded.userType; // Store user type in request
-    next(); // Continue to the next middleware or route handler
+    req.userType = decoded.userType;
+    next(); 
   });
 };
 
@@ -57,7 +57,7 @@ app.get('/details', authMiddleware, async (req, res) => {
   try {
     const token = req.headers.authorization;
     const decodedToken = jwt.verify(token, secretKey);
-    const userId = decodedToken.userId; // Assuming you have userId in the token payload
+    const userId = decodedToken.userId;
     console.log("hello",userId)
     const user = await User.findById(userId);
       console.log(user.name)
@@ -70,7 +70,7 @@ app.get('/details', authMiddleware, async (req, res) => {
       buzzname: user.buzzname,
       name: user.name,
       buzzname:user.buzzname
-      // Add more user details as needed
+      
     };
 
     res.json(userDetails);
@@ -86,25 +86,25 @@ app.post('/selected', async (req, res) => {
   const { token, cohortDetails } = req.body;
 
   try {
-    // Decode the token to get the user's ID
-    const decodedToken = jwt.verify(token, 'krishna'); // Replace with your actual secret key
+   
+    const decodedToken = jwt.verify(token, 'krishna'); 
     const userId = decodedToken.userId;
 
-    // Check if the user is already enrolled in the selected cohort
+
     const user = await User.findById(userId);
     const isEnrolled = user.cohorts.some(cohort => {
-      return cohort.name === cohortDetails.name; // Adjust the condition based on your cohort's identifying attribute
+      return cohort.name === cohortDetails.name; 
     });
 
     if (isEnrolled) {
       return res.status(400).json({ error: 'User is already enrolled in this cohort' });
     }
 
-    // Update the user's cohorts array with the new cohort details
+   
     const updatedUser = await User.findByIdAndUpdate(
       userId,
       { $push: { cohorts: cohortDetails } },
-      { new: true } // Return the updated user document
+      { new: true } 
     );
 
     console.log('User enrolled in cohort:', updatedUser);
@@ -115,14 +115,14 @@ app.post('/selected', async (req, res) => {
   }
 });
 app.get('/enrolled-cohorts', async (req, res) => {
-  const token = req.headers.authorization.split(' ')[1]; // Extract token from Authorization header
+  const token = req.headers.authorization.split(' ')[1]; 
 
   try {
-    // Decode the token to get the user's ID
-    const decodedToken = jwt.verify(token, 'krishna'); // Replace with your actual secret key
+    
+    const decodedToken = jwt.verify(token, 'krishna'); 
     const userId = decodedToken.userId;
    
-    // Fetch the user's enrolled cohorts from the database
+   
     const user = await User.findById(userId);
     const enrolledCohorts = user.cohorts;
    console.log(enrolledCohorts)

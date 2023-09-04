@@ -6,12 +6,12 @@ const Influencer = require('../models/Influencer');
 
 const router = express.Router();
 
-// User registration
+
 router.post('/user/signup', async (req, res) => {
   try {
     const { email, password,name,buzzname } = req.body;
 
-    // Check if the email already exists in the Influencer collection
+
     const existingInfluencer = await Influencer.findOne({ email });
     if (existingInfluencer) {
       return res.status(400).json({ error: 'Email is already registered as an influencer' });
@@ -26,7 +26,6 @@ router.post('/user/signup', async (req, res) => {
     const newUser = new User({ email, password: hashedPassword,name,buzzname });
     await newUser.save();
 
-    // Generate a token with userType set to 'user'
     const token = jwt.sign({ userId: newUser._id, userType: 'user' }, 'krishna', { expiresIn: '1h' });
 
     res.status(201).json({ message: 'User registered successfully', token });
@@ -35,12 +34,12 @@ router.post('/user/signup', async (req, res) => {
   }
 });
 
-// Influencer registration
+
 router.post('/influencer/register', async (req, res) => {
   try {
     const { email, password,name,buzzname } = req.body;
 
-    // Check if the email already exists in the User collection
+   
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ error: 'Email is already registered as a user' });
@@ -55,7 +54,7 @@ router.post('/influencer/register', async (req, res) => {
     const newInfluencer = new Influencer({ email, password: hashedPassword,name,buzzname });
     await newInfluencer.save();
 
-    // Generate a token with userType set to 'influencer'
+   
     const token = jwt.sign({ userId: newInfluencer._id, userType: 'influencer' }, 'krishna', { expiresIn: '1h' });
 
     res.status(201).json({ message: 'Influencer registered successfully', token });
@@ -72,7 +71,7 @@ router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Check if the user exists as a regular user
+  
     const user = await User.findOne({ email });
     if (user) {
       const isPasswordValid = await bcrypt.compare(password, user.password);
@@ -83,7 +82,7 @@ router.post('/login', async (req, res) => {
       }
     }
 
-    // Check if the user exists as an influencer
+   
     const influencer = await Influencer.findOne({ email });
     if (influencer) {
       const isPasswordValid = await bcrypt.compare(password, influencer.password);
