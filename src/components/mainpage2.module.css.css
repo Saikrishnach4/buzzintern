@@ -1,0 +1,65 @@
+.best {
+  color: var(--color-mediumorchid);
+}
+.wantToLearnContainer {
+  position: absolute;
+  top: calc(50% - 445.61px);
+  left: 116px;
+  display: inline-block;
+  width: 839.49px;
+}
+.iphone11ProMax {
+  position: absolute;
+  top: calc(50% - 540px);
+  left: 844.56px;
+  width: 1075.44px;
+  height: 1080px;
+  object-fit: cover;
+}
+.frameChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xl);
+  background-color: var(--color-mediumorchid);
+  width: 837px;
+  height: 187px;
+}
+.div,
+.signUpNow {
+  position: absolute;
+  top: 31.19px;
+  left: 51px;
+  font-size: 91.33px;
+  font-family: var(--font-roboto);
+  color: var(--color-gray-100);
+  text-align: left;
+  display: inline-block;
+  width: 764px;
+}
+.div {
+  top: 26px;
+  left: 748.12px;
+  width: 40.03px;
+}
+.rectangleParent {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 778px;
+  left: 115px;
+  width: 837px;
+  height: 187px;
+}
+.wireframe2 {
+  background-color: var(--color-gray-100);
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 109.89px;
+  color: var(--color-white);
+  font-family: var(--font-roboto);
+}

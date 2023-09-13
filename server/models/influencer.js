@@ -33,6 +33,6 @@ const influencerSchema = new mongoose.Schema({
   videos: [videoSchema], 
 });
 
-const Influencer = mongoose.model('Influencer', influencerSchema);
+const Influencer = mongoose.model('dummy', influencerSchema);
 
 module.exports = Influencer;

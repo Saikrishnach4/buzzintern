@@ -38,7 +38,7 @@ router.post('/user/signup', async (req, res) => {
 router.post('/influencer/register', async (req, res) => {
   try {
     const { email, password,name,buzzname } = req.body;
-
+   console.log(email)
    
     const existingUser = await User.findOne({ email });
     if (existingUser) {

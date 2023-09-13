@@ -17,6 +17,7 @@ import { EmailProvider, InfluencerProvider } from "./components/influencercontex
 
 import Videoframe from "./components/video";
 import Wireframe1 from "./components/mainpage";
+import Mainpage from "./pages/mainpage";
 function App() {
   const action = useNavigationType();
   const location = useLocation();
@@ -82,7 +83,8 @@ function App() {
       <Route path="/enrolled" element={<Wireframe21 />} />
       <Route path="/userview" element={<UserView />} />
       <Route path="/video" element={<Videoframe />} />
-      <Route path="/" element={<Wireframe1 />} />
+      {/* <Route path="/" element={<Wireframe1 />} /> */}
+      <Route path="/" element={<Mainpage />} />
 
     </Routes></EmailProvider>
 
